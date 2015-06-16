@@ -54,7 +54,7 @@
         </script>
 
         <script type="text/template" id="book-title">
-            <%= thumbnail.substring(0, 25) %>
+            <%= thumbnail? thumbnail.substring(0, 25) : "missing" %>
         </script>
 
         <script type="text/template" id="book-detail-template">
