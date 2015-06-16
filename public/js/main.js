@@ -1,19 +1,4 @@
 
-App.RootView = Mn.LayoutView.extend({
-    el: "#content",
-    regions: {
-        search: new App.SearchRegion(),
-        books: new App.BookListRegion()
-    },
-    onShow:function(){
-        this.bookCollection = new App.Books();
-        this.bookListView = new App.BookListView({'collection': this.bookCollection});
-        this.searchView = new App.SearchView();
-        this.getRegion('books').show(this.bookListView);
-        this.getRegion('search').show(this.searchView);
-    }
-});
-
 app.vent.on("search:term", function(searchTerm){
     Backbone.history.navigate("search/" + searchTerm);
 });
