@@ -9,14 +9,15 @@
         <h1 class="title">Backbone.js Books</h1>
 
         <div id="content">
-            <div id="searchBar">
-                Search :
-                <input type="text" name="search" autocomplete="off" id="searchTerm" value="" />
-                <img src="images/loader.gif" alt="Loading..." id="spinner" />
-            </div>
-
             <div id="bookContainer"></div>
+            <div id="searchBar"></div>
         </div>
+
+        <script type="text/template" id="book-search-template">
+            <span>Search :</span>
+            <input type="text" name="search" autocomplete="off" id="searchTerm" value="" />
+            <img src="images/loader.gif" alt="Loading..." id="spinner" />
+        </script>
 
         <script type="text/template" id="book-list-template">
             <div id="table" style="display:table;width:100%;height:100%;">
@@ -51,6 +52,7 @@
 
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/router.js"></script>
+        <script type="text/javascript" src="js/regions.js"></script>
         <script type="text/javascript" src="js/controller.js"></script>
         <script type="text/javascript" src="js/views.js"></script>
         <script type="text/javascript" src="js/models.js"></script>

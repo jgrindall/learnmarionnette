@@ -9,12 +9,19 @@ App.BookListView = Backbone.Marionette.CompositeView.extend({
     childViewContainer: ".books"
 });
 
-App.SearchView = Backbone.View.extend({
+App.SearchView = Backbone.Marionette.ItemView.extend({
+    template: "#book-search-template",
+    initialize:function(){
+        console.log("init SearchView");
+    },
 	events: {
 		'change #searchTerm': 'search'
 	},
 	search: function() {
+        console.log("search...");
 		var searchTerm = this.$('#searchTerm').val().trim();
   		app.vent.trigger("search:term", searchTerm);
+        var test = app.reqres.request("test", {"num":11});
+        console.log("test:", test);
 	}
 });

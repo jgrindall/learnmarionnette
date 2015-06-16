@@ -8,5 +8,3 @@ App.Controller.prototype.search = function(term){
 App.Controller.prototype.defaultSearch = function(term){
     this.search("Neuromarketing");
 };
-
-console.log("Controller", App.Controller);
