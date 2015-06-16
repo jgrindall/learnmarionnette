@@ -1,4 +1,4 @@
-App.Router = Backbone.Marionette.AppRouter.extend({
+App.Router = Mn.AppRouter.extend({
     appRoutes: {
         '':                         'defaultSearch',
         'search/:searchTerm':       'search',

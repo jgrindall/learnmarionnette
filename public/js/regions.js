@@ -1,8 +1,7 @@
-App.SearchRegion = Marionette.Region.extend({
+App.SearchRegion = Mn.Region.extend({
     el: "#searchBar"
 });
 
-App.BookListRegion = Marionette.Region.extend({
+App.BookListRegion = Mn.Region.extend({
     el: "#bookContainer"
 });
-

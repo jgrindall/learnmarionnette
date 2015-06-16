@@ -1,3 +1,3 @@
-var App = Backbone.Marionette.Application.extend({});
+var App = Mn.Application.extend({});
 
 var app = new App();

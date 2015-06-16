@@ -1,5 +1,5 @@
 
-App.RootView = Marionette.LayoutView.extend({
+App.RootView = Mn.LayoutView.extend({
     el: "#content",
     regions: {
         search: new App.SearchRegion(),

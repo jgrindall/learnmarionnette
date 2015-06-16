@@ -1,5 +1,5 @@
 
-App.Controller = Marionette.Controller.extend({});
+App.Controller = Mn.Controller.extend({});
 
 App.Controller.prototype.search = function(term){
     app.vent.trigger("search:term", term);

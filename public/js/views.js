@@ -1,15 +1,15 @@
-App.BookView = Backbone.Marionette.ItemView.extend({
+App.BookView = Mn.ItemView.extend({
     template: "#book-template"
 });
 
-App.BookListView = Backbone.Marionette.CompositeView.extend({
+App.BookListView = Mn.CompositeView.extend({
     template: "#book-list-template",
     id: "bookList",
     childView: App.BookView,
     childViewContainer: ".books"
 });
 
-App.SearchView = Backbone.Marionette.ItemView.extend({
+App.SearchView = Mn.ItemView.extend({
     template: "#book-search-template",
     initialize:function(){
         console.log("init SearchView");
