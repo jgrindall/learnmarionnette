@@ -34,7 +34,7 @@ App.search = function(term){
 
 console.log("added search");
 
-App.addInitializer(function(){
+App.on("start", function(){
     App.layout = new App.Layout();
     App.router = new App.Router({'controller': new App.Controller()});
     App.content.show(App.layout);
