@@ -5,6 +5,3 @@ App.Router = Backbone.Marionette.AppRouter.extend({
         '*anythingElse':            'defaultSearch'
     }
 });
-
-console.log("Router", App.Router);
-

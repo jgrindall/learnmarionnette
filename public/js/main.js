@@ -1,16 +1,10 @@
-App.addRegions({
-    content: "#content"
-});
-
-console.log("added regions");
-
-App.Layout = Backbone.Marionette.Layout.extend({
-    template: "#library-layout",
+App.RootView = Marionette.LayoutView.extend({
+    el: "#content",
     regions: {
         search: "#searchBar",
         books: "#bookContainer"
     },
-    onShow:function(){
+    show:function(){
         this.bookCollection = new App.Books();
         this.bookListView = new App.BookListView({'collection': this.bookCollection});
         this.searchView = new App.SearchView();
@@ -19,28 +13,21 @@ App.Layout = Backbone.Marionette.Layout.extend({
     }
 });
 
-console.log("added layout");
-
-App.vent.on("search:term", function(searchTerm){
+app.vent.on("search:term", function(searchTerm){
     Backbone.history.navigate("search/" + searchTerm);
 });
 
-console.log("added listener");
-
-App.search = function(term){
+app.search = function(term){
     console.log("search ", term);
-    App.vent.trigger("search:term", term);
+    app.vent.trigger("search:term", term);
 };
 
-console.log("added search");
-
-App.on("start", function(){
-    App.layout = new App.Layout();
-    App.router = new App.Router({'controller': new App.Controller()});
-    App.content.show(App.layout);
+app.on("start", function(){
+    app.rootView = new App.RootView();
+    app.rootView.show();
+    app.router = new App.Router({'controller': new App.Controller()});
     Backbone.history.start();
 });
 
-console.log("added addInitializer");
 
 

@@ -8,7 +8,7 @@ App.Books = Backbone.Collection.extend({
         this.page = 0;
         this.loading = false;
         this.totalItems = null;
-        App.vent.on("search:term", function(term){
+        app.vent.on("search:term", function(term){
             self.search(term);
         });
     },
@@ -63,9 +63,3 @@ App.Books = Backbone.Collection.extend({
         });
     }
 });
-
-
-
-console.log("App.Book", App.Book);
-console.log("App.Books", App.Books);
-

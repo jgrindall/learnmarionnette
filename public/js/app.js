@@ -1,3 +1,5 @@
-var App = new Backbone.Marionette.Application({});
+var App = Backbone.Marionette.Application.extend({});
 
-console.log("App", App);
+var app = new App();
+
+console.log("App", app);
